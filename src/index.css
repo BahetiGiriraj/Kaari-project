@@ -119,11 +119,15 @@
   }
 
   .gallery-item {
-    @apply overflow-hidden rounded-lg cursor-pointer group;
+    @apply overflow-hidden rounded-lg cursor-pointer relative;
   }
 
   .gallery-item img {
-    @apply w-full h-full object-cover transition-transform duration-700 group-hover:scale-110;
+    @apply w-full h-full object-cover transition-transform duration-700;
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.1);
   }
 
   .stat-card {
