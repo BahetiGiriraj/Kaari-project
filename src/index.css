@@ -15,8 +15,10 @@
     --popover: 0 0% 100%;
     --popover-foreground: 15 45% 25%;
 
-    --primary: 24 64% 48%;
+    --primary: 350 65% 55%;
     --primary-foreground: 34 33% 96%;
+    --primary-end: 25 75% 55%;
+    --gradient-primary: linear-gradient(135deg, hsl(350, 65%, 55%), hsl(25, 75%, 55%));
 
     --secondary: 33 47% 81%;
     --secondary-foreground: 15 45% 25%;
