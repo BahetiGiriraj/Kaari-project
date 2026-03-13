@@ -45,7 +45,7 @@ const GenresSection = () => {
       }}
     >
       {/* Overlay for readability */}
-      <div className="absolute inset-0 backdrop-blur-[2px]" style={{ background: 'linear-gradient(135deg, hsla(330, 60%, 75%, 0.85), hsla(25, 80%, 65%, 0.85))' }} />
+      <div className="absolute inset-0 bg-background/80 backdrop-blur-[2px]" />
 
       <div className="max-w-5xl mx-auto relative z-10">
         <div className={`text-center mb-16 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>

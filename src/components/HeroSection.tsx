@@ -45,7 +45,8 @@ const HeroSection = () => {
         >
           <a
             href="#gallery"
-            className="px-8 py-3.5 bg-primary text-primary-foreground font-body text-sm font-medium tracking-wider uppercase rounded-sm hover:bg-primary/90 transition-all duration-300"
+            className="px-8 py-3.5 text-primary-foreground font-body text-sm font-medium tracking-wider uppercase rounded-sm hover:opacity-90 transition-all duration-300"
+            style={{ background: 'var(--gradient-primary)' }}
           >
             Explore Gallery
           </a>
