@@ -22,7 +22,7 @@ const StatsSection = () => {
   }, []);
 
   return (
-    <section ref={ref} className="section-padding bg-accent">
+    <section ref={ref} className="section-padding" style={{ background: 'var(--gradient-accent)' }}>
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {stats.map((stat, i) => (
