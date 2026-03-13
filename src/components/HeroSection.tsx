@@ -54,7 +54,7 @@ const HeroSection = () => {
             href="#about"
             className="px-8 py-3.5 border border-secondary/40 text-secondary font-body text-sm font-medium tracking-wider uppercase rounded-sm hover:bg-secondary/10 transition-all duration-300"
           >
-            Learn More
+             Register Now
           </a>
         </div>
       </div>

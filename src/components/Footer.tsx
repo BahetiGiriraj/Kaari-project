@@ -2,7 +2,11 @@ const Footer = () => {
   const navLinks = ["Home", "About", "Speakers", "Gallery", "Genres", "Festival"];
 
   return (
+<<<<<<< HEAD
     <footer id="contact" className="text-accent-foreground" style={{ background: 'var(--gradient-accent)' }}>
+=======
+    <footer id="contact" className="pt-12 bg-gradient-to-br from-rose-600 via-purple-600 to-indigo-700 text-accent-foreground">
+>>>>>>> aa73949 (done)
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-16">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
@@ -54,7 +58,7 @@ const Footer = () => {
 
         <div className="border-t border-accent-foreground/10 pt-8 text-center">
           <p className="font-body text-xs text-accent-foreground/50">
-            © 2025 KAARI — MIT School of Fine Arts and Applied Arts. All rights reserved.
+            © 2026 KAARI — MIT School of Fine Arts and Applied Arts. All rights reserved.
           </p>
         </div>
       </div>

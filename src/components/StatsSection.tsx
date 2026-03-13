@@ -22,7 +22,11 @@ const StatsSection = () => {
   }, []);
 
   return (
+<<<<<<< HEAD
     <section ref={ref} className="section-padding" style={{ background: 'var(--gradient-accent)' }}>
+=======
+    <section ref={ref} className="section-padding bg-gradient-to-br from-pink-500 via-orange-500 to-orange-600">
+>>>>>>> aa73949 (done)
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {stats.map((stat, i) => (
