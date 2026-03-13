@@ -111,7 +111,11 @@
   }
 
   .section-title {
-    @apply text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-accent tracking-tight;
+    @apply text-4xl md:text-5xl lg:text-6xl font-heading font-bold tracking-tight;
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .section-subtitle {
