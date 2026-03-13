@@ -26,8 +26,10 @@
     --muted: 33 30% 90%;
     --muted-foreground: 15 20% 45%;
 
-    --accent: 15 55% 45%;
+    --accent: 350 55% 45%;
+    --accent-end: 25 65% 50%;
     --accent-foreground: 34 33% 96%;
+    --gradient-accent: linear-gradient(135deg, hsl(350, 55%, 45%), hsl(25, 65%, 50%));
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
