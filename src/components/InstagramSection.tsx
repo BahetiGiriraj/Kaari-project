@@ -2,7 +2,7 @@ import { Instagram } from "lucide-react";
 
 const InstagramSection = () => {
   return (
-    <section className="section-padding bg-accent">
+    <section className="section-padding" style={{ background: 'var(--gradient-accent)' }}>
       <div className="max-w-3xl mx-auto text-center">
         <Instagram className="w-12 h-12 text-gold mx-auto mb-6" />
         <h2 className="font-heading text-3xl md:text-4xl font-bold text-accent-foreground mb-4">

@@ -2,7 +2,7 @@ const Footer = () => {
   const navLinks = ["Home", "About", "Speakers", "Gallery", "Genres", "Festival"];
 
   return (
-    <footer id="contact" className="bg-accent text-accent-foreground">
+    <footer id="contact" className="text-accent-foreground" style={{ background: 'var(--gradient-accent)' }}>
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-16">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
