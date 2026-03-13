@@ -3,6 +3,7 @@ import {
   Palette, BookOpen, Music, Film, Camera, Theater, Shapes,
   Paintbrush, Globe, Sparkles, Landmark, Mic
 } from "lucide-react";
+import genresBg from "@/assets/genres-bg.jpg";
 
 const genres = [
   { icon: Palette, label: "Arts and Crafts" },
@@ -33,8 +34,20 @@ const GenresSection = () => {
   }, []);
 
   return (
-    <section id="genres" ref={ref} className="section-padding bg-muted/50">
-      <div className="max-w-5xl mx-auto">
+    <section
+      id="genres"
+      ref={ref}
+      className="section-padding relative overflow-hidden"
+      style={{
+        backgroundImage: `url(${genresBg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* Overlay for readability */}
+      <div className="absolute inset-0 bg-background/80 backdrop-blur-[2px]" />
+
+      <div className="max-w-5xl mx-auto relative z-10">
         <div className={`text-center mb-16 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <p className="text-primary font-body text-sm tracking-[0.3em] uppercase mb-4">Explore Categories</p>
           <h2 className="section-title mb-6">Genres</h2>
@@ -45,7 +58,7 @@ const GenresSection = () => {
           {genres.map((g, i) => (
             <div
               key={g.label}
-              className={`genre-card transition-all duration-500 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+              className={`genre-card bg-card/90 backdrop-blur-sm transition-all duration-500 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
               style={{ transitionDelay: `${i * 50}ms` }}
             >
               <g.icon className="w-8 h-8 text-primary mx-auto mb-3" />
