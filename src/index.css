@@ -24,7 +24,7 @@
     --muted: 33 30% 90%;
     --muted-foreground: 15 20% 45%;
 
-    --accent: 350 45% 30%;
+    --accent: 15 55% 45%;
     --accent-foreground: 34 33% 96%;
 
     --destructive: 0 84.2% 60.2%;
@@ -158,9 +158,9 @@
   .hero-overlay {
     background: linear-gradient(
       to bottom,
-      hsla(350, 45%, 15%, 0.75) 0%,
-      hsla(15, 40%, 18%, 0.55) 50%,
-      hsla(350, 45%, 12%, 0.85) 100%
+      hsla(15, 55%, 20%, 0.75) 0%,
+      hsla(350, 40%, 25%, 0.55) 50%,
+      hsla(15, 55%, 18%, 0.8) 100%
     );
   }
 }
