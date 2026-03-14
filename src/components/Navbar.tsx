@@ -25,14 +25,18 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-background/95 backdrop-blur-md shadow-sm border-b border-border"
-          : "bg-transparent"
+          ? "bg-zinc-900/95 backdrop-blur-md shadow-sm border-b border-white/10"
+          : "bg-zinc-900/70 backdrop-blur-sm"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-20">
-        <a href="#home" className="font-heading text-2xl md:text-3xl font-bold tracking-widest text-primary">
-          KAARI
-        </a>
+       <a href="#home" className="flex items-center">
+  <img
+    src="/Kari26-op2.png"
+    alt="KAARI Logo"
+    className="h-10 md:h-12 object-contain"
+  />
+</a>
 
         {/* Desktop */}
         <div className="hidden lg:flex items-center gap-8">

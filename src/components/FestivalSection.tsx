@@ -30,7 +30,8 @@ const FestivalSection = () => {
           <div className="stat-card">
             <MapPin className="w-8 h-8 text-primary mx-auto mb-3" />
             <h3 className="font-heading text-lg font-semibold text-foreground mb-1">Venue</h3>
-            <p className="font-body text-sm text-muted-foreground">Balgandharva Art Gallery<br />Shivajinagar, Pune</p>
+            <p className="font-body text-sm text-muted-foreground">Malaviya National Institute of Technology
+<br />Malviya Nagar, Jaipur</p>
           </div>
           <div className="stat-card">
             <Calendar className="w-8 h-8 text-primary mx-auto mb-3" />

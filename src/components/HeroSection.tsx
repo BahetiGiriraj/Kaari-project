@@ -44,17 +44,18 @@ const HeroSection = () => {
           style={{ animationDelay: "1s" }}
         >
           <a
-            href="#gallery"
+            href="#about"
             className="px-8 py-3.5 text-primary-foreground font-body text-sm font-medium tracking-wider uppercase rounded-sm hover:opacity-90 transition-all duration-300"
             style={{ background: 'var(--gradient-primary)' }}
           >
-            Explore Gallery
+           Register Now
           </a>
           <a
-            href="#about"
+            href="#gallery"
             className="px-8 py-3.5 border border-secondary/40 text-secondary font-body text-sm font-medium tracking-wider uppercase rounded-sm hover:bg-secondary/10 transition-all duration-300"
           >
-             Register Now
+             Explore Gallery
+             
           </a>
         </div>
       </div>

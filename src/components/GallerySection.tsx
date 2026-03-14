@@ -13,15 +13,29 @@ import gallery9 from "@/assets/gallery-9.jpg";
 import gallery10 from "@/assets/gallery-10.jpg";
 import gallery11 from "@/assets/gallery-11.jpg";
 import gallery12 from "@/assets/gallery-12.jpg";
+import gallery13 from "@/assets/gallery-13.jpg";
+import gallery14 from "@/assets/gallery-14.jpg";
+import gallery15 from "@/assets/gallery-15.jpg";
+import gallery16 from "@/assets/gallery-16.jpg";
+import gallery17 from "@/assets/gallery-17.jpg";
+import gallery18 from "@/assets/gallery-18.jpg";
+import gallery19 from "@/assets/gallery-19.jpg";
 const editions = [
   {
-    year: "Highlights",
+    year: "Art Works",
     images: [
       { src: gallery1, title: "Artist Interaction", span: "row-span-2" },
       { src: gallery2, title: "Live Painting Session", span: "row-span-2" },
       { src: gallery3, title: "Student Artwork Display", span: "row-span-2" },
       { src: gallery4, title: "Exhibition Hall", span: "row-span-2" },
       { src: gallery5, title: "Creative Workshop", span: "row-span-2" },
+      { src: gallery13, title: "Creative Workshop", span: "row-span-2" },
+      { src: gallery14, title: "Creative Workshop", span: "row-span-2" },
+      { src: gallery15, title: "Creative Workshop", span: "row-span-2" },
+      { src: gallery16, title: "Creative Workshop", span: "row-span-2" },
+      { src: gallery17, title: "Creative Workshop", span: "row-span-2" },
+      { src: gallery18, title: "Creative Workshop", span: "row-span-2" },
+      { src: gallery19, title: "Creative Workshop", span: "row-span-2" },
     ],
   },
   {

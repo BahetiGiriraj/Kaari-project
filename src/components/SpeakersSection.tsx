@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { User } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const speakers = [
   {
@@ -79,9 +79,15 @@ const speakers = [
   },
 ];
 
+const PAGE_SIZE = 5;
+
 const SpeakersSection = () => {
   const [visible, setVisible] = useState(false);
+  const [page, setPage] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
+
+  const totalPages = Math.ceil(speakers.length / PAGE_SIZE);
+  const pageSpeakers = speakers.slice(page * PAGE_SIZE, page * PAGE_SIZE + PAGE_SIZE);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -101,33 +107,57 @@ const SpeakersSection = () => {
           <div className="gold-divider" />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
-          {speakers.map((speaker, i) => (
-           <div
-  key={speaker.name}
-  className={`speaker-card transition-all duration-500 ${
-    visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-  }`}
-  style={{ transitionDelay: `${Math.min(i * 60, 600)}ms` }}
->
-  <div className="aspect-square bg-secondary/60 overflow-hidden">
-    <img
-      src={speaker.image}
-      alt={speaker.name}
-      className="w-full h-full object-cover"
-    />
-  </div>
+        <div className="relative">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
+            {pageSpeakers.map((speaker, i) => (
+              <div
+                key={speaker.name}
+                className="speaker-card transition-all duration-500 opacity-100 translate-y-0"
+                style={{ transitionDelay: `${i * 60}ms` }}
+              >
+                <div className="aspect-square bg-secondary/60 overflow-hidden">
+                  <img
+                    src={speaker.image}
+                    alt={speaker.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-4">
+                  <h3 className="font-heading text-sm font-semibold text-foreground leading-tight mb-1">
+                    {speaker.name}
+                  </h3>
+                  <p className="font-body text-xs text-muted-foreground">
+                    {speaker.role}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
 
-  <div className="p-4">
-    <h3 className="font-heading text-sm font-semibold text-foreground leading-tight mb-1">
-      {speaker.name}
-    </h3>
-    <p className="font-body text-xs text-muted-foreground">
-      {speaker.role}
-    </p>
-  </div>
-</div>
-          ))}
+          {/* Navigation */}
+          <div className="flex items-center justify-center gap-4 mt-10">
+            <button
+              onClick={() => setPage((p) => Math.max(0, p - 1))}
+              disabled={page === 0}
+              className="p-2 rounded-full border border-border hover:bg-primary hover:text-primary-foreground hover:border-primary disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-200"
+              aria-label="Previous"
+            >
+              <ChevronLeft size={20} />
+            </button>
+
+            <span className="font-body text-sm text-muted-foreground">
+              {page + 1} / {totalPages}
+            </span>
+
+            <button
+              onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))}
+              disabled={page === totalPages - 1}
+              className="p-2 rounded-full border border-border hover:bg-primary hover:text-primary-foreground hover:border-primary disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-200"
+              aria-label="Next"
+            >
+              <ChevronRight size={20} />
+            </button>
+          </div>
         </div>
       </div>
     </section>

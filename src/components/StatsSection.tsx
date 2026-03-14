@@ -22,11 +22,7 @@ const StatsSection = () => {
   }, []);
 
   return (
-<<<<<<< HEAD
     <section ref={ref} className="section-padding" style={{ background: 'var(--gradient-accent)' }}>
-=======
-    <section ref={ref} className="section-padding bg-gradient-to-br from-pink-500 via-orange-500 to-orange-600">
->>>>>>> aa73949 (done)
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {stats.map((stat, i) => (
@@ -37,8 +33,8 @@ const StatsSection = () => {
               }`}
               style={{ transitionDelay: `${i * 100}ms` }}
             >
-              <p className="font-heading text-3xl md:text-4xl font-bold text-gold mb-2">{stat.value}</p>
-              <p className="font-body text-sm text-accent-foreground/70 tracking-wide">{stat.label}</p>
+              <p className="font-heading text-3xl md:text-4xl font-bold mb-2" style={{ color: '#fdb92e' }}>{stat.value}</p>
+              <p className="font-body text-sm tracking-wide" style={{ color: '#fdb92e' }}>{stat.label}</p>
             </div>
           ))}
         </div>

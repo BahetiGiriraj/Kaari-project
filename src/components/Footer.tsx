@@ -2,11 +2,7 @@ const Footer = () => {
   const navLinks = ["Home", "About", "Speakers", "Gallery", "Genres", "Festival"];
 
   return (
-<<<<<<< HEAD
     <footer id="contact" className="text-accent-foreground" style={{ background: 'var(--gradient-accent)' }}>
-=======
-    <footer id="contact" className="pt-12 bg-gradient-to-br from-rose-600 via-purple-600 to-indigo-700 text-accent-foreground">
->>>>>>> aa73949 (done)
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-16">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
@@ -20,9 +16,20 @@ const Footer = () => {
               href="http://www.mituniversity.ac.in"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-body text-sm text-primary hover:text-gold transition-colors mt-2 inline-block"
+              className="font-body text-sm mt-2 inline-block"
+              style={{ color: '#fdb92e' }}
             >
               www.mituniversity.ac.in
+            </a>
+            <br />
+            <a
+              href="https://mitsofa.edu.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-body text-sm mt-1 inline-block"
+              style={{ color: '#fdb92e' }}
+            >
+              mitsofa.edu.in
             </a>
           </div>
 
@@ -34,7 +41,7 @@ const Footer = () => {
                 <a
                   key={link}
                   href={`#${link.toLowerCase()}`}
-                  className="font-body text-sm text-accent-foreground/70 hover:text-primary transition-colors"
+                  className="font-body text-sm text-accent-foreground/70"
                 >
                   {link}
                 </a>
@@ -49,7 +56,7 @@ const Footer = () => {
               href="https://www.instagram.com/i.am.kaari"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-body text-sm text-accent-foreground/70 hover:text-primary transition-colors"
+              className="font-body text-sm text-accent-foreground/70"
             >
               Instagram — @i.am.kaari
             </a>

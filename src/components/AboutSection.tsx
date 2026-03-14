@@ -61,23 +61,32 @@ const AboutSection = () => {
             </p>
 
             {/* Disciplines */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-3 md:grid-cols-5 gap-2">
               {disciplines.map((d, i) => (
                 <div
                   key={d.label}
-                  className={`genre-card transition-all duration-500 ${
+                  className={`genre-card py-2 px-1 transition-all duration-500 ${
                     visible
                       ? "opacity-100 translate-y-0"
                       : "opacity-0 translate-y-8"
                   }`}
                   style={{ transitionDelay: `${300 + i * 100}ms` }}
                 >
-                  <d.icon className="w-8 h-8 text-primary mx-auto mb-3" />
-                  <p className="font-body text-sm font-medium text-foreground">
+                  <d.icon className="w-5 h-5 text-primary mx-auto mb-1" />
+                  <p className="font-body text-xs font-medium text-foreground">
                     {d.label}
                   </p>
                 </div>
               ))}
+            </div>
+
+            {/* Collaboration */}
+            <div className="mt-16 flex items-center gap-8 flex-wrap">
+              <img src="/MitADT.png" alt="MIT ADT University" className="h-28 object-contain" />
+              <div className="flex flex-col items-center">
+                <span className="text-muted-foreground text-xs font-body tracking-widest uppercase">In Collaboration With</span>
+              </div>
+              <img src="/MNIT.png" alt="MNIT" className="h-28 object-contain" />
             </div>
           </div>
 
