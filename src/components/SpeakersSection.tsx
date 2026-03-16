@@ -3,79 +3,54 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const speakers = [
   {
-    name: "Dr. Prof. Manisha Patil",
-    role: "Painter and Art Historian",
-    image: "/speakers/manisha-patil.png",
+    name: "Viraj Kamble",
+    role: "Creative Painting",
+    image: "/speakers/Viraj-Kamble_Creative_Painting.jpg",
   },
   {
-    name: "Prof. Prabhakar Patil",
-    role: "Candidate – Lalit Kala Academy (General Council Election 2013)",
-    image: "/speakers/prabhakar-patil.jpg",
+    name: "Uttam Janwade",
+    role: "Portrait",
+    image: "/speakers/Uttam_Janwade_Potrait.JPG",
   },
   {
-    name: "Vikas Joshi",
-    role: "Prominent Artist in Oil Painting Medium",
-    image: "/speakers/vikas-joshi.jpg",
+    name: "Tanvi Chaudhari",
+    role: "Printmaking",
+    image: "/speakers/Tanvi-Chaudhari_Printmaking.jpg",
   },
   {
-    name: "Shashikant Rewade",
-    role: "Contemporary Artist",
-    image: "/speakers/shashikant-rewade.jpg",
+    name: "Smita Deshpande",
+    role: "Art Therapy",
+    image: "/speakers/Smita-Deshpande_Art_Therapy.jpg",
   },
   {
-    name: "Pankaj Itkelwar",
-    role: "Contemporary Artist",
-    image: "/speakers/pankaj-itkelwar.jpg",
+    name: "Shilkumar Kumbhar",
+    role: "Creative Painting",
+    image: "/speakers/Shilkumar_Kumbhar_Creative_Painting.JPG",
   },
   {
-    name: "Babar Shareef",
-    role: "Visual Artist, Dramatist, Script Writer, Poet",
-    image: "/speakers/babar-shareef.jpg",
+    name: "Prof. Tushar Panke",
+    role: "Digital Restoration",
+    image: "/speakers/Prof.Tushar_Panke_Digital_Restoration.JPG",
   },
   {
-    name: "Abhishekh Chaurasiya",
-    role: "Ultra-Contemporary Artist (Conceptual Art)",
-    image: "/speakers/abhishekh-chaurasiya.jpg",
+    name: "Prasad Pawar",
+    role: "Sculpture",
+    image: "/speakers/Prasad_Pawar_Sculpture.JPG",
   },
   {
-    name: "Sachin Hazare",
-    role: "Digital Creator",
-    image: "/speakers/sachin-hazare.jpg",
+    name: "Kritika Joshi",
+    role: "Folk Art (Phad Painting)",
+    image: "/speakers/Kritika-Joshi_folk_art(Phad_Painting).jpg",
   },
   {
-    name: "Mrunal Johrapurkar",
-    role: "Contemporary Artist",
-    image: "/speakers/mrunal-johrapurkar.jpg",
+    name: "Kamal Srivastava",
+    role: "3D Sculpting",
+    image: "/speakers/Kamal-Srivastava_3D_Sculpting.jpg",
   },
   {
-    name: "Rajesh Wankhede",
-    role: "Contemporary Artist",
-    image: "/speakers/rajesh-wankhede.jpg",
-  },
-  {
-    name: "Mangesh Kapse",
-    role: "Senior Painter, Art Critic and Founder of Basoli Group",
-    image: "/speakers/mangesh-kapse.jpg",
-  },
-  {
-    name: "Sudhir Bagde",
-    role: "Contemporary Artist",
-    image: "/speakers/sudhir-bagde.jpg",
-  },
-  {
-    name: "Snehal Oak Limaye",
-    role: "Contemporary Artist – Ranked on ArtFacts",
-    image: "/speakers/snehal-limaye.jpg",
-  },
-  {
-    name: "Nikhil Giri",
-    role: "Wildlife Artist and Entrepreneur",
-    image: "/speakers/nikhil-giri.jpg",
-  },
-  {
-    name: "Mr. Anand Dabli",
-    role: "Abstract Artist",
-    image: "/speakers/anand-dabli.jpg",
+    name: "Dnyaneshwar Jagdale",
+    role: "Digital Portrait",
+    image: "/speakers/Dnyaneshvar_Jagdale_Digital_Potrait.JPG",
   },
 ];
 
@@ -91,9 +66,12 @@ const SpeakersSection = () => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
+      ([entry]) => {
+        if (entry.isIntersecting) setVisible(true);
+      },
       { threshold: 0.1 }
     );
+
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
@@ -101,63 +79,86 @@ const SpeakersSection = () => {
   return (
     <section id="speakers" ref={ref} className="section-padding bg-muted/50">
       <div className="max-w-7xl mx-auto">
-        <div className={`text-center mb-16 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-          <p className="text-primary font-body text-sm tracking-[0.3em] uppercase mb-4">Distinguished Guests</p>
+
+        {/* Title */}
+        <div
+          className={`text-center mb-16 transition-all duration-700 ${
+            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          <p className="text-primary text-sm tracking-[0.3em] uppercase mb-4">
+            Distinguished Guests
+          </p>
+
           <h2 className="section-title mb-6">Speakers</h2>
+
           <div className="gold-divider" />
         </div>
 
+        {/* Speakers Grid */}
         <div className="relative">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+
             {pageSpeakers.map((speaker, i) => (
               <div
                 key={speaker.name}
-                className="speaker-card transition-all duration-500 opacity-100 translate-y-0"
+                className="speaker-card transition-all duration-500"
                 style={{ transitionDelay: `${i * 60}ms` }}
               >
-                <div className="aspect-square bg-secondary/60 overflow-hidden">
-                  <img
-                    src={speaker.image}
-                    alt={speaker.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-4">
+
+                {/* Image container */}
+                <div className="w-full aspect-[3/4] bg-muted flex items-center justify-center overflow-hidden rounded-lg">
+  <img
+    src={speaker.image}
+    alt={speaker.name}
+    className="max-w-full max-h-full object-contain"
+  />
+</div>
+
+                {/* Text */}
+                <div className="p-4 text-center">
+
                   <h3 className="font-heading text-sm font-semibold text-foreground leading-tight mb-1">
                     {speaker.name}
                   </h3>
-                  <p className="font-body text-xs text-muted-foreground">
+
+                  <p className="text-xs text-muted-foreground">
                     {speaker.role}
                   </p>
+
                 </div>
+
               </div>
             ))}
+
           </div>
 
           {/* Navigation */}
           <div className="flex items-center justify-center gap-4 mt-10">
+
             <button
               onClick={() => setPage((p) => Math.max(0, p - 1))}
               disabled={page === 0}
-              className="p-2 rounded-full border border-border hover:bg-primary hover:text-primary-foreground hover:border-primary disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-200"
-              aria-label="Previous"
+              className="p-2 rounded-full border border-border hover:bg-primary hover:text-primary-foreground hover:border-primary disabled:opacity-30"
             >
               <ChevronLeft size={20} />
             </button>
 
-            <span className="font-body text-sm text-muted-foreground">
+            <span className="text-sm text-muted-foreground">
               {page + 1} / {totalPages}
             </span>
 
             <button
               onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))}
               disabled={page === totalPages - 1}
-              className="p-2 rounded-full border border-border hover:bg-primary hover:text-primary-foreground hover:border-primary disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-200"
-              aria-label="Next"
+              className="p-2 rounded-full border border-border hover:bg-primary hover:text-primary-foreground hover:border-primary disabled:opacity-30"
             >
               <ChevronRight size={20} />
             </button>
+
           </div>
+
         </div>
       </div>
     </section>
