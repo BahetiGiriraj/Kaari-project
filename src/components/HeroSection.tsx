@@ -44,7 +44,9 @@ const HeroSection = () => {
           style={{ animationDelay: "1s" }}
         >
           <a
-            href="#about"
+            href="https://secure.paytmpayments.com/link/paymentForm/74759/LL_904874431"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-8 py-3.5 text-primary-foreground font-body text-sm font-medium tracking-wider uppercase rounded-sm hover:opacity-90 transition-all duration-300"
             style={{ background: 'var(--gradient-primary)' }}
           >
