@@ -1,26 +1,44 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Speakers", href: "#speakers" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Genres", href: "#genres" },
-  { label: "Festival", href: "#festival" },
-  { label: "Messages", href: "/messages" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "home" },
+  { label: "About", href: "about" },
+  { label: "Speakers", href: "speakers" },
+  { label: "Gallery", href: "gallery" },
+  { label: "Genres", href: "genres" },
+  { label: "Festival", href: "festival" },
+  { label: "Messages", href: "/messages", isPage: true },
+  { label: "Contact", href: "contact" },
 ];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const handleNavClick = (e: React.MouseEvent, link: typeof navLinks[0]) => {
+    if (link.isPage) return; // let normal <a> handle it
+    e.preventDefault();
+    if (location.pathname !== "/") {
+      navigate("/");
+      // wait for navigation then scroll
+      setTimeout(() => {
+        document.getElementById(link.href)?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      document.getElementById(link.href)?.scrollIntoView({ behavior: "smooth" });
+    }
+    setMobileOpen(false);
+  };
 
   return (
     <nav
@@ -31,18 +49,19 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-20">
-       <a href="#home" className="flex items-center">
-  <img
-    src="/Kari26-op2.png"
-    alt="KAARI Logo"
-    className="h-10 md:h-12 object-contain"
-  />
-</a>
+        <a href="/" className="flex items-center">
+          <img src="/Kari26-op2.png" alt="KAARI Logo" className="h-10 md:h-12 object-contain" />
+        </a>
 
         {/* Desktop */}
         <div className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className="nav-link">
+            <a
+              key={link.href}
+              href={link.isPage ? link.href : `#${link.href}`}
+              className="nav-link"
+              onClick={(e) => handleNavClick(e, link)}
+            >
               {link.label}
             </a>
           ))}
@@ -65,9 +84,9 @@ const Navbar = () => {
             {navLinks.map((link) => (
               <a
                 key={link.href}
-                href={link.href}
+                href={link.isPage ? link.href : `#${link.href}`}
                 className="nav-link text-base py-2"
-                onClick={() => setMobileOpen(false)}
+                onClick={(e) => handleNavClick(e, link)}
               >
                 {link.label}
               </a>
