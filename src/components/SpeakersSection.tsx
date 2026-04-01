@@ -104,20 +104,20 @@ const SpeakersSection = () => {
           <div className="gold-divider" />
         </div>
 
-        {/* Nagpur */}
-        <div className="mb-16">
-          <h3 className="font-heading text-2xl font-bold text-foreground mb-8 text-center">
-            Nagpur <span className="text-primary">Kaari</span> Speakers
-          </h3>
-          <SpeakerGrid list={nagpurSpeakers} />
-        </div>
-
         {/* Jaipur */}
-        <div>
+        <div className="mb-16">
           <h3 className="font-heading text-2xl font-bold text-foreground mb-8 text-center">
             Jaipur <span className="text-primary">Kaari</span> Speakers
           </h3>
           <SpeakerGrid list={jaipurSpeakers} />
+        </div>
+
+        {/* Nagpur */}
+        <div>
+          <h3 className="font-heading text-2xl font-bold text-foreground mb-8 text-center">
+            Nagpur <span className="text-primary">Kaari</span> Speakers
+          </h3>
+          <SpeakerGrid list={nagpurSpeakers} />
         </div>
 
       </div>
