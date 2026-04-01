@@ -6,6 +6,7 @@ import SpeakersSection from "@/components/SpeakersSection";
 import GallerySection from "@/components/GallerySection";
 import GenresSection from "@/components/GenresSection";
 import FestivalSection from "@/components/FestivalSection";
+import NewsSection from "@/components/NewsSection";
 import InstagramSection from "@/components/InstagramSection";
 import Footer from "@/components/Footer";
 
@@ -20,6 +21,7 @@ const Index = () => {
       <GallerySection />
       <GenresSection />
       <FestivalSection />
+      <NewsSection />
       <InstagramSection />
       <Footer />
     </div>

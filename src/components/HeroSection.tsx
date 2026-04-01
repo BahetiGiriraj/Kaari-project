@@ -50,7 +50,7 @@ const HeroSection = () => {
             className="px-8 py-3.5 text-primary-foreground font-body text-sm font-medium tracking-wider uppercase rounded-sm hover:opacity-90 transition-all duration-300"
             style={{ background: 'var(--gradient-primary)' }}
           >
-           Register Now
+           Register for Pune
           </a>
           <a
             href="#gallery"

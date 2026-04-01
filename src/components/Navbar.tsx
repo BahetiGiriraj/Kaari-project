@@ -8,6 +8,7 @@ const navLinks = [
   { label: "Gallery", href: "#gallery" },
   { label: "Genres", href: "#genres" },
   { label: "Festival", href: "#festival" },
+  { label: "Messages", href: "/messages" },
   { label: "Contact", href: "#contact" },
 ];
 
